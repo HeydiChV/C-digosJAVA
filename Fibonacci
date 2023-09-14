@@ -1,0 +1,21 @@
+public class Fibonacci {
+    public static void main(String[] args) {
+        int N = 10; // Cambia este valor por la cantidad de números de Fibonacci que deseas mostrar
+        System.out.println("==================================================");
+        System.out.println("======= ESTUDIANTE: Heydi Chaiña Velasquez =======");
+        System.out.println("==================================================");        
+        System.out.println("Los primeros " + N + " números de Fibonacci son:");
+        
+        for (int i = 0; i < N; i++) {
+            System.out.print(calcularFibonacci(i) + " ");
+        }
+    }
+    
+    public static int calcularFibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return calcularFibonacci(n - 1) + calcularFibonacci(n - 2);
+        }
+    }
+}
