@@ -1,0 +1,30 @@
+public class BinarioAEntero {
+    public static int binarioAEntero(String binario) {
+        return binarioAEnteroRecursivo(binario, 0);
+    }
+
+    private static int binarioAEnteroRecursivo(String binario, int indice) {
+        // Caso base: Cuando hemos procesado todos los dígitos binarios.
+        if (indice == binario.length()) {
+            return 0;
+        }
+
+        // Obtenemos el dígito binario en el índice actual.
+        char digito = binario.charAt(indice);
+
+        // Convertimos el dígito binario a entero ('0' -> 0, '1' -> 1).
+        int valor = Character.getNumericValue(digito);
+
+        // Llamada recursiva: Multiplicamos el valor del dígito binario por 2 elevado al índice actual y sumamos el resultado de la llamada recursiva.
+        return (valor * (int)Math.pow(2, binario.length() - indice - 1)) + binarioAEnteroRecursivo(binario, indice + 1);
+    }
+
+    public static void main(String[] args) {
+        String binario = "1101"; // Cambia este valor por el número binario que desees convertir
+        int resultado = binarioAEntero(binario);
+        System.out.println("==================================================");
+        System.out.println("======= ESTUDIANTE: Heydi Chaiña Velasquez =======");
+        System.out.println("==================================================");
+        System.out.println("El número binario " + binario + " es igual a " + resultado + " en decimal.");
+    }
+}
