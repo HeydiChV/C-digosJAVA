@@ -1,0 +1,20 @@
+public class SumaRecursiva {
+    public static int sumaDeEnteros(int N) {
+        // Caso base: Si N es igual a 1, la suma es simplemente 1.
+        if (N == 1) {
+            return 1;
+        } else {
+            // Llamada recursiva: Suma N con la suma de los primeros N-1 enteros.
+            return N + sumaDeEnteros(N - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int N = 5; // Cambia este valor por el número de enteros que deseas sumar.
+        int resultado = sumaDeEnteros(N);
+        System.out.println("==================================================");
+        System.out.println("======= ESTUDIANTE: Heydi Chaiña Velasquez =======");
+        System.out.println("==================================================");
+        System.out.println("La suma de los primeros " + N + " enteros es: " + resultado);
+    }
+}
